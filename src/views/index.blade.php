@@ -2,17 +2,17 @@
 
 @section('content')
 
-    <section class="section is-first-box">
+    <section class="container">
 
         @include("inbox::messageNotificationHandling")
 
         <div class="row">
 
-            <div class="col-sm-3">
+            <div class="col-sm-4 border-right">
                 @include("drhd.inbox.conversations")
             </div>
 
-            <div class="col-sm-9">
+            <div class="col-sm-8">
                 @include("drhd.inbox.conversation")
             </div>
         </div>

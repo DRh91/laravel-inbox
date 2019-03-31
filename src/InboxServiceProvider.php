@@ -20,8 +20,7 @@ class InboxServiceProvider extends ServiceProvider {
                              __DIR__.'/views/createForm.blade.php' => resource_path('views/drhd/inbox/createForm.blade.php'),
                              __DIR__.'/views/conversation.blade.php' => resource_path('views/drhd/inbox/conversation.blade.php'),
                              __DIR__.'/views/conversations.blade.php' => resource_path('views/drhd/inbox/conversations.blade.php'),
-
-//                             __DIR__ . '/views' => base_path('resources/views/drhd/inbox'),
+                             
                              __DIR__ . '/config' => config_path('inboxErrorMessages'),
                          ]);
 

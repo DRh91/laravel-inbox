@@ -6,17 +6,17 @@ after submitting the message.
 
 @include("inbox::messageNotificationHandling")
 
-<div class="box">
+<div class="">
 
     {{ Form::open(array('route' => 'inbox.store')) }}
 
 
     {{--    Input of message subject    --}}
 
-    <div class="field">
-        <label class="label">{{ Form::label('private_message_subject', 'Betreff') }}</label>
-        <div class="control">
-            {{ Form::text('private_message_subject', '', ['id' => 'private_message_subject', 'class' => 'input is-medium', 'placeholder' => 'Betreff (optional)']) }}
+    <div class="">
+        <label class="">{{ Form::label('private_message_subject', 'Betreff') }}</label>
+        <div class="">
+            {{ Form::text('private_message_subject', '', ['id' => 'private_message_subject', 'class' => '', 'placeholder' => 'Betreff (optional)']) }}
         </div>
     </div>
 
@@ -28,10 +28,10 @@ after submitting the message.
         {{-- Nevertheless the user name needs to be passed as a post parameter. So the name is stored in a hidden input. --}}
         <input type="hidden" value="{{ $user->name }}" name="receiver_name">
     @else
-        <div class="field">
-            <label class="label">{{ Form::label('receiver_name', 'Benutzername des Empfängers') }}</label>
-            <div class="control">
-                {{ Form::text('receiver_name', '', ['id' => 'receiver_name', 'class' => 'input is-medium', 'placeholder' => 'Benutzername des Empfängers']) }}
+        <div class="">
+            <label class="">{{ Form::label('receiver_name', 'Benutzername des Empfängers') }}</label>
+            <div class="">
+                {{ Form::text('receiver_name', '', ['id' => 'receiver_name', 'class' => '', 'placeholder' => 'Benutzername des Empfängers']) }}
                 @include("inbox::alert", ['field' => "receiver_name"])
             </div>
         </div>
@@ -40,10 +40,10 @@ after submitting the message.
 
     {{--    Input of message text    --}}
 
-    <div class="field">
-        <label class="label">{{ Form::label('private_message_text', 'Nachricht') }}</label>
-        <div class="control">
-            {{ Form::textarea('private_message_text', '', ['id' => 'private_message_text', 'class' => 'textarea is-medium', 'placeholder' => 'Nachricht', 'rows' => 5 ])}}
+    <div class="">
+        <label class="">{{ Form::label('private_message_text', 'Nachricht') }}</label>
+        <div class="">
+            {{ Form::textarea('private_message_text', '', ['id' => 'private_message_text', 'class' => '', 'placeholder' => 'Nachricht', 'rows' => 5 ])}}
             @include("inbox::alert", ['field' => "private_message_text"])
         </div>
     </div>
@@ -58,9 +58,9 @@ after submitting the message.
 
     {{--    Submit    --}}
 
-    <div class="field is-grouped">
-        <div class="control">
-            {{ Form::submit('Absenden', ['class' => 'button is-primary']) }}
+    <div class="">
+        <div class="">
+            {{ Form::submit('Absenden', ['class' => '']) }}
         </div>
     </div>
 

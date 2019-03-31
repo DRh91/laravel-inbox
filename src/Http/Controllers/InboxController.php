@@ -48,7 +48,8 @@ class InboxController extends Controller
             $user_sender = Auth::user();
             $user_receiver = User::where('name', '=', $request->input('receiver_name'))->first();
 
-            if(is_null($user_receiver)) throw new MessengerException(ErrorMessages::RECEIVER_MISSING_OR_NOT_EXISTING);
+            $error_message_prefix = config('inboxErrorMessages')['error_message_prefix'];
+            if(is_null($user_receiver)) throw new MessengerException($error_message_prefix.config('inboxErrorMessages')['receiver_missing_or_not_existing']);
 
             $messenger->sendPrivateMessage($user_sender, $user_receiver, $subject, $text);
 

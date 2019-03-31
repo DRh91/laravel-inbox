@@ -2,10 +2,10 @@
 
 @section('content')
 
-<section class="section is-first-box">
-    <div class="box">
+<section class="container">
+    <div class="">
 
-        <h1 class="title is-3">Neue Nachricht schreiben</h1>
+        <h1 class="">Neue Nachricht schreiben</h1>
 
         @include("drhd.inbox.createForm")
 </section>

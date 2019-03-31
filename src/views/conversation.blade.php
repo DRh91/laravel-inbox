@@ -2,12 +2,12 @@
 
     @if(isset($conversation))
 
-        <h3 class="title is-5">Deine Unterhaltung mit {{$conversation->getConversationPartner()->name}}</h3>
+        <h3 class="">Deine Unterhaltung mit {{$conversation->getConversationPartner()->name}}</h3>
 
-        <div class="accordion">
+        <div class="">
 
             <input id="accodion-btn" class="checkbox-input" type="checkbox" name="tabs">
-            <label for="accodion-btn" class="accordion-label">Neue Nachricht schreiben</label>
+            <label for="accodion-btn" class="accordion-label">Neue Nachricht schreiben (remove or use for accordion)</label>
 
             <div class="dropdown-panel">
                 <div class="dropdown-panel-content">
@@ -21,29 +21,29 @@
         </div>
 
         @foreach($privateMessages as $privateMessage)
-            <div class="message-container">
+            <div class="card mb-2 p-2">
 
-                <div class="private-message-header">
-                    <strong class="message-sender is-size-5">{{$privateMessage->user->name}}</strong>
-                    <strong class="message-date">{{$privateMessage->created_at->format('d.m.y H:i')}}</strong>
+                <div class="">
+                    <strong class="">{{$privateMessage->user->name}}</strong>
+                    <strong class="">{{$privateMessage->created_at->format('d.m.y H:i')}}</strong>
                 </div>
-                <div class="message-subject">
-                    <strong class="is-size-7">Betreff:</strong>
+                <div class="">
+                    <strong class="">Betreff:</strong>
                     @if(isset($privateMessage->private_message_subject))
-                        <span class="is-size-7">{{$privateMessage->private_message_subject}}</span>
+                        <span class="">{{$privateMessage->private_message_subject}}</span>
                     @else
-                        <span class="is-size-7">-</span>
+                        <span class="">-</span>
                     @endif
 
                 </div>
-                <hr class="horizontal-divider">
-                <div class="message-text is-size5">
+                <hr class="">
+                <div class="">
                     {!! nl2br(e($privateMessage->private_message_text)) !!}
                 </div>
             </div>
         @endforeach
 
-        <div class="paginationLinks">
+        <div class="">
             {{ $privateMessages->links() }}
         </div>
 
