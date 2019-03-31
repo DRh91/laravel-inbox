@@ -7,8 +7,9 @@ use Illuminate\Support\ServiceProvider;
 class InboxServiceProvider extends ServiceProvider {
 
     public function boot() {
-
         $this->loadRoutesFrom(__DIR__ . '/routes/web.php');
+
+//        $this->loadViewsFrom($this->app->resourcePath('views/drhd/inbox'), 'drhd\inbox');
 
         $this->loadViewsFrom(__DIR__ . '/views', 'inbox');
 
@@ -16,11 +17,9 @@ class InboxServiceProvider extends ServiceProvider {
 
         $this->publishes([
                              __DIR__ . '/views' => base_path('resources/views/drhd/inbox'),
-                         ]);
-
-        $this->publishes([
                              __DIR__ . '/config' => config_path('inboxErrorMessages'),
                          ]);
+
 
     }
 
@@ -29,6 +28,7 @@ class InboxServiceProvider extends ServiceProvider {
         $this->mergeConfigFrom(
             __DIR__ . '/config/errorMessages.php', 'inboxErrorMessages'
         );
+
 
     }
 

@@ -21,7 +21,7 @@ class InboxController extends Controller
     public function index()
     {
         $user = Auth::user();
-        return view("inbox::index")->with('user', $user);
+        return view("drhd.inbox.index")->with('user', $user);
     }
 
     /**
