@@ -12,7 +12,7 @@
             <div class="dropdown-panel">
                 <div class="dropdown-panel-content">
                     @php $user = $conversation->getConversationPartner();@endphp
-                    @include('inbox::createForm', $user)
+                    @include('drhd.inbox.createForm', $user)
                 </div>
             </div>
             @include("inbox::alert", ['field' => "private_message_text"])

@@ -9,14 +9,19 @@ class InboxServiceProvider extends ServiceProvider {
     public function boot() {
         $this->loadRoutesFrom(__DIR__ . '/routes/web.php');
 
-//        $this->loadViewsFrom($this->app->resourcePath('views/drhd/inbox'), 'drhd\inbox');
-
         $this->loadViewsFrom(__DIR__ . '/views', 'inbox');
 
         $this->loadMigrationsFrom(__DIR__ . '/database/migrations');
 
         $this->publishes([
-                             __DIR__ . '/views' => base_path('resources/views/drhd/inbox'),
+                             // Views
+                             __DIR__.'/views/newMessage.blade.php' => resource_path('views/drhd/inbox/newMessage.blade.php'),
+                             __DIR__.'/views/index.blade.php' => resource_path('views/drhd/inbox/index.blade.php'),
+                             __DIR__.'/views/createForm.blade.php' => resource_path('views/drhd/inbox/createForm.blade.php'),
+                             __DIR__.'/views/conversation.blade.php' => resource_path('views/drhd/inbox/conversation.blade.php'),
+                             __DIR__.'/views/conversations.blade.php' => resource_path('views/drhd/inbox/conversations.blade.php'),
+
+//                             __DIR__ . '/views' => base_path('resources/views/drhd/inbox'),
                              __DIR__ . '/config' => config_path('inboxErrorMessages'),
                          ]);
 
