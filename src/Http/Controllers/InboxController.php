@@ -31,7 +31,7 @@ class InboxController extends Controller
      */
     public function create()
     {
-        return view("inbox::newMessage");
+        return view("drhd.inbox.newMessage");
     }
 
     /**
@@ -87,7 +87,7 @@ class InboxController extends Controller
             $privateMessages = $conversation->privateMessages()->paginate(6);
             $conversation->markAsRead();
 
-            return view("inbox::index")->with('user', $user)->with('conversation', $conversation)->with('privateMessages', $privateMessages);
+            return view("drhd.inbox.index")->with('user', $user)->with('conversation', $conversation)->with('privateMessages', $privateMessages);
         }
         catch (MessengerException $e) {
             return redirect('/inbox')->withErrors($e->getMessage());

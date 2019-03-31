@@ -1,4 +1,4 @@
-@extends('layouts.default')
+@extends('layouts.app')
 
 @section('content')
 
@@ -6,14 +6,14 @@
 
         @include("inbox::messageNotificationHandling")
 
-        <div class="columns">
+        <div class="row">
 
-            <div class="column is-4">
-                @include("inbox::conversations")
+            <div class="col-sm-3">
+                @include("drhd.inbox.conversations")
             </div>
 
-            <div class="column is-8">
-                @include("inbox::conversation")
+            <div class="col-sm-9">
+                @include("drhd.inbox.conversation")
             </div>
         </div>
 
