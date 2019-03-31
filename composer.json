@@ -2,6 +2,7 @@
   "name": "drhd/inbox",
   "description": "Adds messaging and inbox functionality for users. To use with the laravel authentication system.",
   "type": "library",
+  "license": "MIT",
   "authors": [
     {
       "name": "Daniel",
